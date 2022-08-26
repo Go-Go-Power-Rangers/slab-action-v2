@@ -1,0 +1,19 @@
+name: 'slab github integration'
+description: 'Acces methods to create and update posts on slab'
+inputs: 
+  test:
+    description: 'input test'
+    required: true
+  test2:
+    description: 'input test2'
+    required: true
+outputs:
+  name:
+    description: 'just a test for now'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.test }}
+    - ${{ inputs.test2}}
