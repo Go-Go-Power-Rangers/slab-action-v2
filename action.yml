@@ -15,5 +15,5 @@ runs:
   using: 'composite'
   steps:
     - run: |
-        bundle exec ruby run.rb
+        ruby test.rb ${{test}} ${{test2}}
       shell: bash
