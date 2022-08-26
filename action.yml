@@ -12,8 +12,8 @@ outputs:
     description: 'just a test for now'
 
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.test }}
-    - ${{ inputs.test2}}
+  using: 'composite'
+  steps:
+    - run: |
+        bundle exec ruby run.rb
+      shell: bash
