@@ -83,6 +83,7 @@ module Slab
         puts("repo owner: " + repo_owner)
         puts("post id: " + post_id)
         puts("external id: " + externalId)
+        puts("token: " + accessToken_github)
         # gets content from slab post
         query = " query {
             post (id: \"#{post_id}\") {
