@@ -11,8 +11,6 @@ module Slab
     # accessToken_slab, accessToken_github, repo_name, repo_owner, external_id_post
     def create_post(accessToken_slab, accessToken_github, repo_name, repo_owner, externalId)
         # --- REQUEST TO GITHUB ---
-        puts(repo_name)
-        puts(repo_owner)
         query = " query {
             repository(owner: \"#{repo_owner}\", name: \"#{repo_name}\") {
                 latestRelease {
@@ -81,7 +79,10 @@ module Slab
     def update_post(accessToken_slab, accessToken_github, repo_name, repo_owner, post_id, externalId)
         # This script takes post content from slab, reformats the json to markdown
         # and adds new markdown all together, then sends it in a query to slab
-
+        puts("repo name: " + repo_name)
+        puts("repo owner: " + repo_owner)
+        puts("post id: " + post_id)
+        puts("external id: " + externalId)
         # gets content from slab post
         query = " query {
             post (id: \"#{post_id}\") {
