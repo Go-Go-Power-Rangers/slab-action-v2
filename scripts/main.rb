@@ -9,6 +9,7 @@ repo_name = ARGV[0]
 repo_owner = ARGV[1]
 accessToken_slab = ARGV[2] 
 accessToken_github = ARGV[3] 
+accessToken_github += " " + ARGV[4]
 # tpoicID should be hardcoded since it 
 topicID= "2w941vt0"
 
