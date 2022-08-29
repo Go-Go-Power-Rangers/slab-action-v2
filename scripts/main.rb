@@ -12,7 +12,8 @@ accessToken_github = ARGV[3]
 # tpoicID should be hardcoded since it 
 topicID= "2w941vt0"
 
-puts(accessToken_github)
+puts("git:" + accessToken_github)
+puts("slab: " + accessToken_slab)
 ### The flow so far:
 # 1. Check Slab for a post titled with currentDate, and either
 # - 1a. Find nil, and create a new syncpost with currentDate as externalId
