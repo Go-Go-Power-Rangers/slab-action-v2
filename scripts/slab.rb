@@ -110,7 +110,8 @@ module Slab
         }"
         uri = URI("https://api.github.com/graphql")
         res = queryFunc(uri, accessToken_github, query)
-
+        puts(res.inspect())
+        
         # creates markdown string from new release
         release_hash = JSON.parse(res.body)
         puts(res.body)
