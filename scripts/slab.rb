@@ -11,7 +11,8 @@ module Slab
     # accessToken_slab, accessToken_github, repo_name, repo_owner, external_id_post
     def create_post(accessToken_slab, accessToken_github, repo_name, repo_owner, externalId)
         # --- REQUEST TO GITHUB ---
-        
+        puts repo_name
+        puts repo_owner
         query = " query {
             repository(owner: \"#{repo_owner}\", name: \"#{repo_name}\") {
                 latestRelease {
