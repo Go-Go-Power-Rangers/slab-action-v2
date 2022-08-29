@@ -11,8 +11,8 @@ module Slab
     # accessToken_slab, accessToken_github, repo_name, repo_owner, external_id_post
     def create_post(accessToken_slab, accessToken_github, repo_name, repo_owner, externalId)
         # --- REQUEST TO GITHUB ---
-        puts repo_name
-        puts repo_owner
+        puts(repo_name)
+        puts(repo_owner)
         query = " query {
             repository(owner: \"#{repo_owner}\", name: \"#{repo_name}\") {
                 latestRelease {
@@ -115,6 +115,7 @@ module Slab
 
         # creates markdown string from new release
         release_hash = JSON.parse(res.body)
+        puts(res.body)
         release_new = release_hash.fetch("data").fetch("repository").fetch("latestRelease")
         tag_name = release_new["tagName"]
         markdown_string_new = create_markdown_string(release_new, repo_name, tag_name)
