@@ -21,16 +21,18 @@ The purpose of Slab-action is to automate the publishing of release notes from a
 The syncPost mutations that create and update the posts on Slab have their issues, so the following can prove problematic:
 
 - 1. Editing posts is out of the question through Slab’s site, due to the fact that we have to use syncPosts to insert content through the API, and syncPosts are unfortunately read-only.
-It is mostly out of the question through the API, as you would have to: 
-      1a. Reliably identify the elements you would edit from the JSON-looking Delta format that a Slab Post content query returns.
-      1b. Edit the content. 
-      1c. Convert it to HTML or MarkDown.
-      1d. Call the syncPost mutation with the same externalId as the syncPost was created with, with the new content.
+It is ***mostly*** out of the question through the API, as you would have to: 
+  - 1. Reliably identify the elements you would edit from the JSON-looking Delta format that a Slab Post content query returns.
+  - 2. Edit the content. 
+  - 3. Convert it to HTML or MarkDown.
+  - 4. Call the syncPost mutation with the same externalId as the syncPost was created with, with the new content.
 
   This could be implemented in a later release, but it is advisable to simply wait for Slab to update their API, as the Slab-action would need refactoring   once this happens anyway.
 
 - 2. Converting the format that you get from querying the content of a post on Slab to MarkDown is a bit difficult, so writing the release notes (even in MarkDown) by hand can have weird consequences on the formatting of the resulting Slab post.
 
 Both of the issues above can be easily fixed by auto-generating the release notes on GitHub. This ensures that links to pull requests and issues are written explicitly, so that they are properly translated to Slab. 
+
+Other than this, it is good to note that the topicId is currently hardcoded, as the plan so far has been to gather all posts under a single topic. Should this change, then some fucntionality to identify the correct topic should be introduced, topicId saved as a variable and introduced to the create_post and update_post functions. 
 
 
