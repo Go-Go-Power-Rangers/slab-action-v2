@@ -4,13 +4,13 @@
 
 The purpose of Slab-action is to automate the publishing of release notes from a GitHub repository to a post in a given topic on Slab. The post on Slab will be named after the date of publishing, in the format ‘DD-MM-YYYY’. For any repository that implements the Slab-action, the flow will be as follows:
 
-- 1. When a new release is published on the repository, the workflow executes the ‘main.rb’ script. The repository name and owner, as well as access tokens for both GitHub and Slab, are given as arguments.
+- 1. When a new release is published on the repository, the workflow executes the `main.rb` script. The repository name and owner, as well as access tokens for both GitHub and Slab, are given as arguments.
 
 - 2. The ‘main.rb’ script will check whether or not a post exists with the current date as title.
 
-  - 1. If a post with the title does not exist, a new post is created with the current date as title and the information from the release notes as its     content. Following this, the post is inserted into a given topic. This is all done through the ‘create_post’ function in the ‘slab.rb’ script. 
+  - 1. If a post with the title does not exist, a new post is created with the current date as title and the information from the release notes as its     content. Following this, the post is inserted into a given topic. This is all done through the `create_post` function in the `slab.rb` script. 
     
-  - 2. If a post with the title does exist, the ‘update_post’ function in ‘slab.rb’ is called. The contents of the post are extracted and converted to the     MarkDown (MD) format by the ‘create_markdown_from_slabjson’ and ‘create_markdown_string’ in ‘methods.rb’, and finally the latest release and its           notes are queried from GitHub and merged with the previous contents of the existing Slab post. This allows us to have all releases on a given day           put into a single Slab post with that date in the title.
+  - 2. If a post with the title does exist, the `update_post` function in `slab.rb` is called. The contents of the post are extracted and converted to the     MarkDown (MD) format by the `create_markdown_from_slabjson` and `create_markdown_string` in `methods.rb`, and finally the latest release and its           notes are queried from GitHub and merged with the previous contents of the existing Slab post. This allows us to have all releases on a given day           put into a single Slab post with that date in the title.
   
 - 3. The changes are reflected on Slab, and the result of the syncPost mutations (GraphQL) that create/update posts on Slab will print their results to the terminal.
 
