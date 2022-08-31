@@ -36,7 +36,7 @@ Both of the issues above can be easily fixed by auto-generating the release note
 
 One issue that also persists is that there can only be one hyperlink per line of text. If two pull requests are linked alongside each other in one line, it will typically only be the last of the two that is represented by an actual hyperlink in the Slab post.
 
-It is also good to note that the topicId is currently hardcoded, as the plan so far has been to gather all posts under a single topic. Should this change, then some fucntionality to identify the correct topic should be introduced, topicId saved as a variable and introduced to the create_post and update_post functions.
+It is also good to note that the topicId is currently hardcoded, as the plan so far has been to gather all posts under a single topic. Should this change, then some fucntionality to identify the correct topic should be introduced, topicId saved as a variable and introduced to the `create_post` and `update_post` functions.
 
 
 
