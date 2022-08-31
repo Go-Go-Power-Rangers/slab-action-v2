@@ -8,7 +8,7 @@ require_relative "methods"
 repo_name = ARGV[0]
 repo_owner = ARGV[1]
 access_token_slab = ARGV[2]
-access_token_github = ARGV[3]
+access_token_github = "bearer #{ARGV[3]}"
 # tpoicID does not change and is hardcoded
 topic_id = "2w941vt0"
 
