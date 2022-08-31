@@ -19,7 +19,7 @@ topicID= "2w941vt0"
 #       merge it with the new content, and override the syncPost by calling it
 #       again with the new merged content.
 ###
- 
+puts Time.now
 currentDate = DateTime.now().strftime('%d-%m-%Y').to_s
 puts currentDate
 
